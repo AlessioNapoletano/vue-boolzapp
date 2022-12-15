@@ -23,22 +23,57 @@
         <div class="bg-green"></div>
         <div id="app" class="box d-flex">
             <div id="list-Of-Contact">
-                <div id="user" class="d-flex align-content-center">
+                <!--Div for user img and name, with icon-->
+                <div id="user" class="d-flex align-items-center">
                     <div class="image">
-                        <img class="my-2 ms-2" src="./imgs/avatar_io.jpg" alt="">
+                        <img class="ms-2" src="./imgs/avatar_io.jpg" alt="">
                     </div>
                     <div class="name">
-                        <p class="fw-bold fs-5 ms-2 pt-3 text-dark">
+                        <p class="fw-bold fs-5 ms-2 pt-3">
                             Alessio
                         </p>
                     </div>
-                    <div class="icon ms-auto d-flex align-content-center">
+                    <div class="icon ms-auto d-flex align-items-center">
                         <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i class="fa-solid fa-message mx-3"></i>
+                        <i class="fa-solid fa-ellipsis-vertical me-3"></i>
+                    </div>
+                </div>
+
+                <!--Div notification-->
+                <div id="notification" class="d-flex align-items-center">
+                    <div class="icon">
+                        <i class="fa-regular fa-bell-slash ms-3 me-1"></i>
+                    </div>
+                    <div class="text d-flex flex-column">
+                        <p>
+                            Ricevi notifiche di nuovi messaggi
+                        </p>
+
+                        <p>
+                            Attiva notifiche desktop
+                        </p>
+                    </div>
+                </div>
+
+                <!--Div Search-->
+                <div id="search" class="d-flex align-items-center">
+                    <div class="button d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="input">
+                        <input class= "w-100 h-100" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                   
+                </div>
+
+                <div class="chat-user">
+                    <div class="user" v-for="contact in contacts">
+                        {{ contact.name }}
                     </div>
                 </div>
             </div>
+
             <div id="chat"></div>
         </div>
         <div class="bg-light"></div>
