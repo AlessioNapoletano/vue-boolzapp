@@ -68,8 +68,15 @@
                 </div>
 
                 <div class="chat-user">
-                    <div class="user" v-for="contact in contacts">
-                        {{ contact.name }}
+                    <div class="user d-flex" v-for="contact in contacts">
+                        <div class="image">
+                            <img :src="'./imgs/avatar'+{{contact.avatar}}+'.jpg'" alt="picture Profile">
+                        </div>
+                        <div class="name">
+                            <p>
+                                {{contact.name}}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
