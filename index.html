@@ -91,6 +91,7 @@
             </div>
 
             <div id="chat">
+                <!--header-->
                 <div class="current-contact d-flex align-items-center">
                     <div class="image">
                         <img :src="'./imgs/avatar'+contacts[0].avatar+'.jpg'" alt="">
@@ -111,10 +112,22 @@
                     </div>
                     <div></div>
                 </div>
+
+                <!--body-->
                 <div class="body">
+                    <div class="messages">
+                        <div class="my-message">
+                            {{ contacts[0].messages[0].message }}
+                        </div>
+                        
+                        <div class="time-message">
+                            {{ contacts[0].messages[0].date.substring(11,16) }}
+                        </div>
+                    </div>
 
                 </div>
 
+                <!--Footer -->
                 <div class="message d-flex align-items-center justify-content-between">
                     <div class="emoji d-flex align-items-center justify-content-center">
                         <i class="fa-regular fa-face-smile"></i>
