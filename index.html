@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <main class="">
+    <main>
         <div class="bg-green"></div>
         <div id="app" class="box d-flex">
             <div id="list-Of-Contact">
@@ -62,26 +62,72 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="input">
-                        <input class= "w-100 h-100" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input class="w-100 h-100" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
-                   
+
                 </div>
 
                 <div class="chat-user">
-                    <div class="user d-flex" v-for="contact in contacts">
-                        <div class="image">
-                            <img :src="'./imgs/avatar'+{{contact.avatar}}+'.jpg'" alt="picture Profile">
+                    <div class="user d-flex align-items-center" v-for="contact in contacts">
+                        <div class="image me-2">
+                            <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
                         </div>
                         <div class="name">
-                            <p>
+                            <p class="fw-bold">
                                 {{contact.name}}
+                            </p>
+                            <p>
+                                ultimo messaggio inviato
+                            </p>
+                        </div>
+
+                        <div class="time">
+                            <p>
+                                12:00
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="chat"></div>
+            <div id="chat">
+                <div class="current-contact d-flex align-items-center">
+                    <div class="image">
+                        <img :src="'./imgs/avatar'+contacts[0].avatar+'.jpg'" alt="">
+                    </div>
+                    <div class="name">
+                        <p class="fw-bold">
+                            {{contacts[0].name}}
+                        </p> 
+                        <p>
+                            Ultimo accesso
+                        </p>
+                    </div>
+                    <div class="icon ms-auto">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip mx-2"></i>
+                        <i class="fa-solid fa-ellipsis-vertical me-3"></i>
+
+                    </div>
+                    <div></div>
+                </div>
+                <div class="body">
+
+                </div>
+
+                <div class="message d-flex align-items-center justify-content-between">
+                    <div class="emoji d-flex align-items-center justify-content-center">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div class="my-input input-group d-flex align-items-center">
+                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-describedby="basic-addon2">
+                      </div>                      
+                    <div class="memo d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+
+                </div>
+            </div>
         </div>
         <div class="bg-light"></div>
     </main>

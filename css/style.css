@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 
+p {
+    margin: 0;
+}
+
 main {
     position: relative;
 }
 
 i {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #afafaf;
 }
 
@@ -38,7 +42,7 @@ i {
     width: 30%;
     height: 100%;
     border: 1px solid black;
-}   
+}
 
 #chat {
     width: 70%;
@@ -50,6 +54,7 @@ i {
     width: 100%;
     height: 60px;
     border: 1px solid black;
+
 }
 
 div.image img {
@@ -63,7 +68,7 @@ div.image img {
     width: 100%;
     height: 65px;
     background-color: #aad6f9;
-    
+
 }
 
 #notification i {
@@ -100,7 +105,7 @@ div.button {
 
 div.input {
     width: 80%;
-    height:  30px;
+    height: 30px;
     border: 1px solid black;
 }
 
@@ -109,4 +114,69 @@ div.user {
     width: 100%;
     height: 70px;
     border: 1px solid black;
+    padding: .5rem;
+    position: relative;
+}
+
+
+div.time {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+
+
+
+/*current chat*/
+div.current-contact {
+    width: 100%;
+    height: 8%;
+    border: 1px solid black;
+    background-color: #e9e9e9;
+    padding: .5rem;
+}
+
+div.body {
+    width: 100%;
+    height: 84%;
+    background-image: url("../imgs/mine.jpg");
+}
+
+
+div.message {
+    width: 100%;
+    height: 8%;
+    background-color: #f1eeea;
+}
+
+
+div.message {
+    padding: .5rem;
+}
+
+div.emoji {
+    width: 10%;
+    height: 100%;
+}
+
+div.emoji i {
+    color: #64676a;
+    font-size: 1.6rem;
+}
+
+div.my-input{
+    width: 80%;
+    height: 100%;
+}
+
+
+div.memo {
+    width: 10%;
+    height: 100%;
+}
+
+div.memo i {
+    color: #64676a;
+    font-size: 1.6rem;
 }
