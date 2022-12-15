@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bg-green {
+    background-color: green;
+    height: 30vh;
+}
+
+.bg-white {
+    background-color: black;
+    height: 70vh;
+}
+
+main {
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    width: 1130px;
+    height: 650px;
+    top: 40%;
+    left: 22%;
+    background-color: white;
+    background-position: center;
+}
+
+/*Box child*/
+#list-Of-Contact {
+    width: 30%;
+    height: 100%;
+    border: 1px solid black;
+}   
+
+#chat {
+    width: 70%;
+    height: 100%;
+    border: 1px solid black;
+}
