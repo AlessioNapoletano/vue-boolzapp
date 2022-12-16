@@ -59,7 +59,7 @@
                 <!--Div Search-->
                 <div id="search" class="d-flex align-items-center">
                     <div class="input-group">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">
+                        <button @click="findChatUser(newTextSearch)" class="btn btn-outline-secondary" type="button" id="button-addon1">
                             <i class="fa-solid fa-magnifying-glass px-3 fs-5"></i>
                         </button>
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
@@ -74,10 +74,11 @@
                 <div class="chat-user">
                     <div class="user d-flex align-items-center" v-for="contact, index in contacts"
                         @click="currentChat = index">
+
                         <div class="image me-2" v-if="contact.visible === true">
                             <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
                         </div>
-                        <div class="ms-1 name"  v-if="contact.visible === true">
+                        <div class="ms-1 name"  v-if="contact.visible ">
                             <p class="fw-bold">
                                 {{contact.name}}
                             </p>

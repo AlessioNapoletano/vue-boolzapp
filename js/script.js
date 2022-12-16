@@ -190,7 +190,7 @@ createApp({
 
         findChatUser: function(name) {
             this.contacts.forEach(element => {
-                if(element.name === name || name === "") {
+                if(element.name.toLowerCase().includes(name.toLowerCase())  || name === "") {
                     element.visible = true
                 } else {
                     element.visible = false;
@@ -203,6 +203,7 @@ createApp({
 
         deleteMessage: function() {
             alert("messaggio eliminato")
+
         }
 
     }
