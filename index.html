@@ -65,7 +65,7 @@
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Example text with button addon" aria-describedby="button-addon1"
                             v-model="newTextSearch"
-                            @keyup.enter="findChatUser(newTextSearch)"
+                            @keyup="findChatUser(newTextSearch)"
                             >
                     </div>
 
@@ -73,7 +73,7 @@
 
                 <div class="chat-user">
                     <div class="user" v-for="contact, index in contacts"
-                        @click="currentChat = index" v-show="contact.visible === true">
+                        @click="currentChat = index" v-show="contact.visible === true && contact.messages.length > 0">
 
                         <div class="image me-2" >
                             <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
@@ -82,14 +82,16 @@
                             <p class="fw-bold">
                                 {{contact.name}}
                             </p>
-                            <p>
+
+                            <p v-if="(contact.messages.length > 0)">
+                                <!--accede all'ultimo messaggio di una chat-->
                                 {{ contact.messages[contact.messages.length-1].message}}
                             </p>
                         </div>
 
-                        <div class="time">
+                        <div class="time" v-if="(contact.messages.length > 0)">
                             <p>
-                                12:00
+                                {{ contact.messages[contact.messages.length-1].date.substring(11,16)}}
                             </p>
                         </div>
                     </div>
@@ -120,19 +122,19 @@
 
                 <!--body-->
                 <div class="body d-fles flex-column">
-                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message'" v-for="message in contacts[currentChat].messages" @mouseover="hover = true"
+                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message'" v-for="message,index in contacts[currentChat].messages" @mouseover="hover = true"
                     @mouseleave="hover = false">
 
                         <p>
                             {{message.message}}
                         </p>
                         
-                        <span class="text-danger delete" v-if="hover === true" @click="deleteMessage">
+                        <span class="text-danger delete" v-if="hover === true" @click="deleteMessage(index)">
                             X
                         </span>
 
                         <span>
-                            {{ contacts[0].messages[0].date.substring(11,16) }}
+                            {{ message.date.substring(11,16) }}
                         </span>
                     </div>
 

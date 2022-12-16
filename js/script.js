@@ -201,9 +201,9 @@ createApp({
 
         },
 
-        deleteMessage: function() {
-            //contacts[currentChat].messages[index]
+        deleteMessage: function(index) {
             alert("messaggio eliminato")
+            this.contacts[this.currentChat].messages.splice(index, 1);
 
         }
 
