@@ -17,21 +17,28 @@ i {
     color: #afafaf;
 }
 
-.bg-green {
-    background-color: #569486;
+/*
+BACKGROUND UP and DOWN screen
+*/
+.bg-up-screen {
+    background-color: #009688;
     height: 30vh;
 }
 
-.bg-white {
+.bg-down-screen {
     height: 70vh;
-    background-color: #d8dad3;
+    background-color: #d8dbd5;
 }
+
+/*
+BOX CONTENT APP
+*/
 
 .box {
     position: absolute;
     width: 1400px;
     height: 850px;
-    top: 10%;
+    top: 3%;
     left: 15%;
     background-color: white;
     background-position: center;
@@ -41,7 +48,6 @@ i {
 #list-Of-Contact {
     width: 30%;
     height: 100%;
-    border: 1px solid black;
 }
 
 #chat {
@@ -52,7 +58,7 @@ i {
 
 #user {
     width: 100%;
-    height: 60px;
+    height: 8%;
     border: 1px solid black;
 
 }
@@ -92,7 +98,7 @@ div.text p:last-child {
 #search {
     width: 100%;
     height: 50px;
-    background-color: lightgrey;
+    background-color: #fafafa;
     padding: .5rem;
 }
 
@@ -118,6 +124,10 @@ div.user {
     position: relative;
 }
 
+div.user:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
 
 div.time {
     position: absolute;
@@ -148,20 +158,30 @@ div.body {
 div.body div.messages {
     border: 1px soldi black;
     padding: 1rem;
-    background-color: white;
+    margin: 1rem;
     border-radius: 10px;
     width: 30%;
     position: relative;
+    
 }
 
-div.body div.messages .time-message {
+.bg-white-message {
+    background-color: white;
+}
+
+.bg-green-message {
+    background-color: lightgreen;
+}
+
+
+div.body div.messages span {
     font: .3rem;
     color: grey;
     position: absolute;
     bottom: 0px;
     right: 5px;
+    
 }
-
 
 
 div.container-message {

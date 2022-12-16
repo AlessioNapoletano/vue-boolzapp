@@ -20,7 +20,7 @@
 
 <body>
     <main>
-        <div class="bg-green"></div>
+        <div class="bg-up-screen"></div>
         <div id="app" class="box d-flex">
             <div id="list-Of-Contact">
                 <!--Div for user img and name, with icon-->
@@ -29,7 +29,7 @@
                         <img class="ms-2" src="./imgs/avatar_io.jpg" alt="">
                     </div>
                     <div class="name">
-                        <p class="fw-bold fs-5 ms-2 pt-3">
+                        <p class="fw-bold fs-5 ms-2">
                             Alessio
                         </p>
                     </div>
@@ -58,17 +58,17 @@
 
                 <!--Div Search-->
                 <div id="search" class="d-flex align-items-center">
-                    <div class="button d-flex align-items-center justify-content-center">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <div class="input">
-                        <input class="w-100 h-100" type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">
+                            <i class="fa-solid fa-magnifying-glass px-3"></i>
+                        </button>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
 
                 </div>
 
                 <div class="chat-user">
-                    <div class="user d-flex align-items-center" v-for="contact in contacts">
+                    <div class="user d-flex align-items-center" v-for="contact, index in contacts" @click="currentChat = index">
                         <div class="image me-2">
                             <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
                         </div>
@@ -94,12 +94,12 @@
                 <!--header-->
                 <div class="current-contact d-flex align-items-center">
                     <div class="image">
-                        <img :src="'./imgs/avatar'+contacts[0].avatar+'.jpg'" alt="">
+                        <img :src="'./imgs/avatar'+contacts[currentChat].avatar+'.jpg'" alt="">
                     </div>
                     <div class="name">
                         <p class="fw-bold">
-                            {{contacts[0].name}}
-                        </p> 
+                            {{contacts[currentChat].name}}
+                        </p>
                         <p>
                             Ultimo accesso
                         </p>
@@ -114,15 +114,17 @@
                 </div>
 
                 <!--body-->
-                <div class="body">
-                    <div class="messages">
-                        <div class="my-message">
-                            {{ contacts[0].messages[0].message }}
-                        </div>
-                        
-                        <div class="time-message">
+                <div class="body d-fles flex-column">
+                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message' " v-for="message in contacts[currentChat].messages">
+                        <p>
+                            {{message.message}}
+                        </p>
+
+                       
+
+                        <span>
                             {{ contacts[0].messages[0].date.substring(11,16) }}
-                        </div>
+                        </span>
                     </div>
 
                 </div>
@@ -133,8 +135,9 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div class="my-input input-group d-flex align-items-center">
-                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-describedby="basic-addon2">
-                      </div>                      
+                        <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                            aria-describedby="basic-addon2">
+                    </div>
                     <div class="memo d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
@@ -142,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-light"></div>
+        <div class="bg-down-screen"></div>
     </main>
 
 
