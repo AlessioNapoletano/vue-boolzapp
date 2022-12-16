@@ -53,13 +53,14 @@ BOX CONTENT APP
 #chat {
     width: 70%;
     height: 100%;
-    border: 1px solid black;
+    border: 1px solid #eaeaea;
 }
 
 #user {
     width: 100%;
     height: 8%;
-    border: 1px solid black;
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
 
 }
 
@@ -72,13 +73,13 @@ div.image img {
 
 #notification {
     width: 100%;
-    height: 65px;
-    background-color: #aad6f9;
+    height: 10%;
+    background-color: #8edafc;
 
 }
 
 #notification i {
-    color: #aad6f9;
+    color: #8edafc;
     padding: 15px;
     border-radius: 50%;
     background-color: white;
@@ -86,12 +87,13 @@ div.image img {
 
 
 div.text p {
-    font-size: .8rem;
-    margin-bottom: 0rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 div.text p:last-child {
     text-decoration: underline;
+    font-size: .8rem;
     color: #788f93;
 }
 
@@ -102,30 +104,16 @@ div.text p:last-child {
     padding: .5rem;
 }
 
-div.button {
-    width: 20%;
-    border: 1px solid black;
-    background-color: white;
-    height: 30px;
-}
-
-div.input {
-    width: 80%;
-    height: 30px;
-    border: 1px solid black;
-}
-
-
 div.user {
     width: 100%;
     height: 70px;
-    border: 1px solid black;
+    border: 1px solid #eaeaea;
     padding: .5rem;
     position: relative;
 }
 
-div.user:hover{
-    background-color: lightgray;
+div.user:hover {
+    background-color: #e9ebeb;
     cursor: pointer;
 }
 
@@ -142,8 +130,8 @@ div.time {
 div.current-contact {
     width: 100%;
     height: 8%;
-    border: 1px solid black;
-    background-color: #e9e9e9;
+    border-left: 1px solid #817676f2;
+    background-color: #eaeaea;
     padding: .5rem;
 }
 
@@ -162,7 +150,7 @@ div.body div.messages {
     border-radius: 10px;
     width: 30%;
     position: relative;
-    
+
 }
 
 .bg-white-message {
@@ -180,7 +168,7 @@ div.body div.messages span {
     position: absolute;
     bottom: 0px;
     right: 5px;
-    
+
 }
 
 
@@ -188,8 +176,9 @@ div.container-message {
     width: 100%;
     height: 100%;
     padding: 5rem;
-    
+
 }
+
 div.message {
     width: 100%;
     height: 8%;
@@ -211,7 +200,7 @@ div.emoji i {
     font-size: 1.6rem;
 }
 
-div.my-input{
+div.my-input {
     width: 80%;
     height: 100%;
 }

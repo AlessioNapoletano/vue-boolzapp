@@ -45,7 +45,7 @@
                     <div class="icon">
                         <i class="fa-regular fa-bell-slash ms-3 me-1"></i>
                     </div>
-                    <div class="text d-flex flex-column">
+                    <div class="text d-flex flex-column ms-2">
                         <p>
                             Ricevi notifiche di nuovi messaggi
                         </p>
@@ -60,15 +60,17 @@
                 <div id="search" class="d-flex align-items-center">
                     <div class="input-group">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon1">
-                            <i class="fa-solid fa-magnifying-glass px-3"></i>
+                            <i class="fa-solid fa-magnifying-glass px-3 fs-5"></i>
                         </button>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                      </div>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
 
                 </div>
 
                 <div class="chat-user">
-                    <div class="user d-flex align-items-center" v-for="contact, index in contacts" @click="currentChat = index">
+                    <div class="user d-flex align-items-center" v-for="contact, index in contacts"
+                        @click="currentChat = index">
                         <div class="image me-2">
                             <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
                         </div>
@@ -101,7 +103,7 @@
                             {{contacts[currentChat].name}}
                         </p>
                         <p>
-                            Ultimo accesso
+                            Ultimo accesso oggi alle 12:00
                         </p>
                     </div>
                     <div class="icon ms-auto">
@@ -115,12 +117,13 @@
 
                 <!--body-->
                 <div class="body d-fles flex-column">
-                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message' " v-for="message in contacts[currentChat].messages">
+                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message' "
+                        v-for="message in contacts[currentChat].messages">
                         <p>
                             {{message.message}}
                         </p>
 
-                       
+
 
                         <span>
                             {{ contacts[0].messages[0].date.substring(11,16) }}
