@@ -72,22 +72,22 @@
                 </div>
 
                 <div class="chat-user">
-                    <div class="user d-flex align-items-center" v-for="contact, index in contacts"
-                        @click="currentChat = index">
+                    <div class="user" v-for="contact, index in contacts"
+                        @click="currentChat = index" v-show="contact.visible === true">
 
-                        <div class="image me-2" v-if="contact.visible === true">
+                        <div class="image me-2" >
                             <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
                         </div>
-                        <div class="ms-1 name"  v-if="contact.visible ">
+                        <div class="ms-1 name">
                             <p class="fw-bold">
                                 {{contact.name}}
                             </p>
                             <p>
-                                ultimo messaggio inviato
+                                {{ contact.messages[contact.messages.length-1].message}}
                             </p>
                         </div>
 
-                        <div class="time"  v-if="contact.visible === true">
+                        <div class="time">
                             <p>
                                 12:00
                             </p>

@@ -202,6 +202,7 @@ createApp({
         },
 
         deleteMessage: function() {
+            //contacts[currentChat].messages[index]
             alert("messaggio eliminato")
 
         }
