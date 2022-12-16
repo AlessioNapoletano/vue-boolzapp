@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>WhatsApp</title>
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -26,7 +26,7 @@
                 <!--Div for user img and name, with icon-->
                 <div id="user" class="d-flex align-items-center">
                     <div class="image">
-                        <img class="ms-2" src="./imgs/avatar_io.jpg" alt="">
+                        <img class="ms-2" src="./imgs/foto profilo.png" alt="">
                     </div>
                     <div class="name">
                         <p class="fw-bold fs-5 ms-2">
@@ -74,7 +74,7 @@
                         <div class="image me-2">
                             <img :src="'./imgs/avatar'+contact.avatar+'.jpg'" alt="picture Profile">
                         </div>
-                        <div class="name">
+                        <div class="ms-1 name">
                             <p class="fw-bold">
                                 {{contact.name}}
                             </p>
@@ -98,7 +98,7 @@
                     <div class="image">
                         <img :src="'./imgs/avatar'+contacts[currentChat].avatar+'.jpg'" alt="">
                     </div>
-                    <div class="name">
+                    <div class="ms-2 name">
                         <p class="fw-bold">
                             {{contacts[currentChat].name}}
                         </p>
@@ -110,9 +110,8 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <i class="fa-solid fa-paperclip mx-2"></i>
                         <i class="fa-solid fa-ellipsis-vertical me-3"></i>
-
                     </div>
-                    <div></div>
+
                 </div>
 
                 <!--body-->
@@ -123,8 +122,6 @@
                             {{message.message}}
                         </p>
 
-
-
                         <span>
                             {{ contacts[0].messages[0].date.substring(11,16) }}
                         </span>
@@ -134,13 +131,18 @@
 
                 <!--Footer -->
                 <div class="message d-flex align-items-center justify-content-between">
+                    <!--Icon emoji-->
                     <div class="emoji d-flex align-items-center justify-content-center">
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
+
+                    <!--Input new Message-->
                     <div class="my-input input-group d-flex align-items-center">
                         <input type="text" class="form-control" placeholder="Scrivi un messaggio"
-                            aria-describedby="basic-addon2">
+                            aria-describedby="basic-addon2" v-model="newTextMessage" @keyup.enter="newMessage(newTextMessage)" >
                     </div>
+
+                    <!--Icon memo-->
                     <div class="memo d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-microphone"></i>
                     </div>

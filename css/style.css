@@ -68,6 +68,7 @@ div.image img {
     width: 40px;
     height: 80%;
     border-radius: 50%;
+    object-fit: center;
 }
 
 
@@ -140,6 +141,7 @@ div.body {
     height: 84%;
     background-image: url("../imgs/mine.jpg");
     padding: 3rem;
+    overflow: scroll;
 
 }
 
