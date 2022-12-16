@@ -4,6 +4,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            hover: false,
+            newTextSearch: '',
             newTextMessage: '',
             currentChat: 0,
             contacts: [
@@ -185,6 +187,23 @@ createApp({
                 this.contacts[this.currentChat].messages.push({ date: '10/01/2020 15:51:00', message: "ok", status: 'received' });
             }, 1000);
         },
+
+        findChatUser: function(name) {
+            this.contacts.forEach(element => {
+                if(element.name === name || name === "") {
+                    element.visible = true
+                } else {
+                    element.visible = false;
+                } 
+            });
+            
+
+
+        },
+
+        deleteMessage: function() {
+            alert("messaggio eliminato")
+        }
 
     }
 }).mount("#app")

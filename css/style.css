@@ -173,6 +173,12 @@ div.body div.messages span {
 
 }
 
+div.body div.messages span.delete {
+    top: 13px;
+    right: 12px;
+    cursor: pointer;
+}
+
 
 div.container-message {
     width: 100%;
