@@ -122,14 +122,16 @@
 
                 <!--body-->
                 <div class="body d-fles flex-column">
-                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message'" v-for="message,index in contacts[currentChat].messages" @mouseover="hover = true"
-                    @mouseleave="hover = false">
+                    <div :class="(message.status === 'sent') ? 'messages bg-green-message ms-auto' : 'messages bg-white-message'" v-for="message,index in contacts[currentChat].messages" 
+                    @mouseover="contacts[currentChat].messages[index].hover = true"
+                    @mouseleave="contacts[currentChat].messages[index].hover = false"
+                    >
 
                         <p>
                             {{message.message}}
                         </p>
                         
-                        <span class="text-danger delete" v-if="hover === true" @click="deleteMessage(index)">
+                        <span class="text-danger delete" v-if="contacts[currentChat].messages[index].hover === true" @click="deleteMessage(index)">
                             X
                         </span>
 
