@@ -155,6 +155,12 @@ div.body div.messages {
 
 }
 
+div.empty-chat span {
+    background-color: rgb(203, 203, 165);
+    padding: .5rem;
+    border-radius: 20px;
+}
+
 .bg-white-message {
     background-color: white;
 }
@@ -210,3 +216,5 @@ div.my-input {
     width: 80%;
     height: 100%;
 }
+
+

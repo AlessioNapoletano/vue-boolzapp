@@ -140,7 +140,6 @@
                     @mouseover="showHoverDelete(index)"
                     @mouseleave="hideHoverDelete(index)"
                     >
-
                         <p>
                             {{message.message}}
                         </p>
@@ -151,6 +150,12 @@
 
                         <span>
                             {{ message.date.substring(11,16) }}
+                        </span>
+                    </div>
+
+                    <div v-show="contacts[currentChat].messages.length === 0" class="empty-chat text-center">
+                        <span>
+                            La chat è vuota scrivi a {{ contacts[currentChat].name }}
                         </span>
                     </div>
 
