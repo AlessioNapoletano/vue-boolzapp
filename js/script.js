@@ -4,7 +4,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            
+
             newTextSearch: '',
             newTextMessage: '',
             currentChat: 0,
@@ -18,19 +18,19 @@ createApp({
                             date: '10/01/2020 15:30:55',
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent',
-                            
+
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Ricordati di stendere i panni',
                             status: 'sent',
-                            
+
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
                             status: 'received',
-                            
+
                         }
                     ],
                 },
@@ -191,29 +191,37 @@ createApp({
             }, 1000);
         },
 
-        findChatUser: function(name) {
+        findChatUser: function (name) {
             this.contacts.forEach(element => {
-                if(element.name.toLowerCase().includes(name.toLowerCase())  || name === "") {
+                if (element.name.toLowerCase().includes(name.toLowerCase()) || name === "") {
                     element.visible = true
                 } else {
                     element.visible = false;
-                } 
+                }
             });
-            
+
 
 
         },
 
-        deleteMessage: function(index) {
-            console.log(index);
-            alert("Il messaggio: " + " \' "+ this.contacts[this.currentChat].messages[index].message + " \' " + " sarà Eliminato definitivamente dalla chat")
+        deleteMessage: function (index) {
+            // console.log(index);
+            // alert("Il messaggio: " + " \' "+ this.contacts[this.currentChat].messages[index].message + " \' " + " sarà Eliminato definitivamente dalla chat")
             this.contacts[this.currentChat].messages.splice(index, 1);
 
         },
 
-        showIndex: function(index) {
+        showIndex: function (index) {
             console.log(index);
             console.log(this.contacts[this.currentChat].messages[index])
+        },
+
+        showHoverDelete: function (index) {
+            this.contacts[this.currentChat].messages[index].hover = true;
+        },
+
+        hideHoverDelete: function (index) {
+            this.contacts[this.currentChat].messages[index].hover = false;
         }
 
     }

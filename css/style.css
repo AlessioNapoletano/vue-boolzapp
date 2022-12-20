@@ -45,7 +45,7 @@ BOX CONTENT APP
 }
 
 /*Box child*/
-#list-Of-Contact {
+#user-box{
     width: 30%;
     height: 100%;
 }
@@ -56,7 +56,7 @@ BOX CONTENT APP
     border: 1px solid #eaeaea;
 }
 
-#user {
+#main-user {
     width: 100%;
     height: 8%;
     border: 1px solid #eaeaea;
@@ -176,6 +176,7 @@ div.body div.messages span.delete {
     top: 13px;
     right: 12px;
     cursor: pointer;
+    
 }
 
 div.container-message {
