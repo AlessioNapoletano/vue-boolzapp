@@ -199,9 +199,6 @@ createApp({
                     element.visible = false;
                 }
             });
-
-
-
         },
 
         deleteMessage: function (index) {
